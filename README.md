@@ -1,0 +1,2 @@
+# XBYHttpManager
+基于AFNetworking再封装的一个轻量级网络请求框架
