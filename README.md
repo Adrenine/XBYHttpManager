@@ -14,17 +14,17 @@
 * 3、设置服务器域名，在XBYHttpManager.m中将宏设置DOMAINURI为自家服务器域名。
 
 ## Usage 使用方法
-`fullHttpUrl()`方法用于拼接域名与uri，例如链接为：www.baidu.com/news，需要在XBYHttpManager.m中设置`DOMAINURI=@"www.baidu.com"`设置自家服务器域名，只需要拼接链接：`fullHttpUrl(@"/news")`，此时`fullHttpUrl(@"/news") = @"www.baidu.com/news"`，或者直接在此处写完整链接，不使用`fullHttpUrl()`拼接，param设置参数。
+`fullHttpUrl()`方法用于拼接域名与uri，例如链接为：www.baidu.com/news，需要在XBYHttpManager.m中设置`DOMAINURI=@"www.baidu.com"`设置自家服务器域名，只需要拼接链接：`fullHttpUrl(@"/news")`，此时`fullHttpUrl(@"/news")`即等于` @"www.baidu.com/news"`，或者直接在此处写完整链接，不使用`fullHttpUrl()`拼接，param设置参数。
 ```objc
 //GET方法
 XBYGET(fullHttpUrl(<#uri#>), <#param#>, ^(NSURLSessionDataTask *task, id responseObject, BOOL suc) {
-if (suc) {
-//返回成功
-} else {
-//服务器返回失败
-}
+    if (suc) {
+        //返回成功
+    } else {
+    //服务器返回失败
+    }
 }, ^(NSURLSessionDataTask *task, NSError *error) {
-//网络问题造成的失败
+    //网络问题造成的失败
 });
 
 //POST方法
@@ -69,9 +69,9 @@ POST方法
 */
 XBYTASK *
 XBYPOST(NSString *url,
-id param,
-XBYRequestSuccess success,
-XBYRequestFailure failure);
+    id param,
+    XBYRequestSuccess success,
+    XBYRequestFailure failure);
 
 /**
 后台运行
@@ -85,9 +85,9 @@ XBYRequestFailure failure);
 */
 XBYTASK *
 XBYPOSTBACKGROUND(NSString *url,
-id param,
-XBYRequestSuccess success,
-XBYRequestFailure failure, BOOL showError);
+    id param,
+    XBYRequestSuccess success,
+    XBYRequestFailure failure, BOOL showError);
 
 /**
 <#Description#>
@@ -101,10 +101,10 @@ XBYRequestFailure failure, BOOL showError);
 */
 XBYTASK *
 XBYPOSTDATA(NSString *url,
-id param,
-NSDictionary * bodyData,
-XBYRequestSuccess success,
-XBYRequestFailure failure);
+    id param,
+    NSDictionary * bodyData,
+    XBYRequestSuccess success,
+    XBYRequestFailure failure);
 
 /**
 GET方法
@@ -117,9 +117,9 @@ GET方法
 */
 XBYTASK *
 XBYGET(NSString *url,
-id param,
-XBYRequestSuccess success,
-XBYRequestFailure failure);
+    id param,
+    XBYRequestSuccess success,
+    XBYRequestFailure failure);
 
 @interface XBYHttpManager : NSObject
 
